@@ -1,0 +1,76 @@
+* {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+     font-family: 'Roboto', sans-serif;
+}
+
+header {
+    border: solid #2471A3 1px;
+    padding: 20px 0px;
+    text-align: center;
+    margin: 5px;
+    background: #7FB3D5;
+    text-transform: uppercase;
+    color: #154360;
+    letter-spacing: 2px;
+    
+}
+
+.container {
+    border: solid #2471A3 1px;
+    padding: 20px;
+    text-align: center;
+    margin: 5px;
+}
+
+#operations {
+    background: #A9CCE3;
+    color: #154360;
+    font-weight: lighter;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+#user-amount {
+    border: solid 1px #2471A3;
+    padding: 5px;
+    width: 208px;
+    border-radius: 5px;
+    background: #EAF2F8;
+}
+
+button {
+    width: 60px;
+    height: 20px;
+    color: #154360;
+    background: #EAF2F8;
+    border-radius: 5px;
+    border: solid 1px #2471A3;  
+    margin: 5px 5px 20px 5px;
+}
+
+Button:active {
+	position:relative;
+	top:1px;
+}
+
+#results {
+    background: #D4E6F1;
+    color: #154360;
+}
+
+#result-description {
+    text-transform: uppercase;
+    color: #154360;
+    font-size: 12px;
+}
+
+#result-outcome {
+    text-transform: uppercase;
+    color: #154360;
+    letter-spacing: 2px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: lighter;
+}
