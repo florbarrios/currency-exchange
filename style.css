@@ -74,3 +74,9 @@ Button:active {
     font-size: 16px;
     font-weight: lighter;
 }
+
+#rate-timestamp {
+    text-transform: uppercase;
+    color: #154360;
+    font-size: 11px;
+}
