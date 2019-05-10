@@ -52,7 +52,6 @@ const getConversion = function (amount, rate) {
     resultEl.innerHTML = result
 
     const lastTimestamp = localStorage.getItem('timestampMessage')
-    // const lastTimestamp = JSON.parse(timestampJSON)
     const timestampEl = document.querySelector('#rate-timestamp')
     timestampEl.innerHTML = lastTimestamp
 }
