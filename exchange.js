@@ -9,7 +9,7 @@ const getExchangeRates = async () => {
             // Saving the last time the data was fetched since the API does not return any dates
             const timestamp = new Date()
             const timestampMessage = `Fecha de cotizacion: ${timestamp.getDate()} / ${timestamp.getMonth()} / ${timestamp.getFullYear()}  ${timestamp.getHours()} : ${timestamp.getMinutes()}`
-            localStorage.setItem('timestampMessage', JSON.stringify(timestampMessage))
+            localStorage.setItem('timestampMessage', timestampMessage)
 
             return data
         })
@@ -31,19 +31,13 @@ const setRates = async () => {
     const exchangeRates = await getExchangeRates()
 
     if (exchangeRates) {
-        const USDtoday = exchangeRates.find(function (currency) {
-            return currency.casa.nombre === "Dolar"
-        })
+        const USDtoday = exchangeRates.find(currency => currency.casa.nombre === "Dolar")
         USDrate = USDtoday.casa.venta.replace(/,/, ".")
 
-        const EURtoday = exchangeRates.find(function (currency) {
-            return currency.casa.nombre === "Euro"
-        })
+        const EURtoday = exchangeRates.find(currency => currency.casa.nombre === "Euro")
         EURrate = EURtoday.casa.venta.replace(/,/, ".")
 
-        const GBPtoday = exchangeRates.find(function (currency) {
-            return currency.casa.nombre === "Libra Esterlina"
-        })
+        const GBPtoday = exchangeRates.find(currency => currency.casa.nombre === "Libra Esterlina")
         GBPrate = GBPtoday.casa.venta.replace(/,/, ".")
 
         localStorage.setItem('rates', JSON.stringify(exchangeRates))
@@ -57,8 +51,8 @@ const getConversion = function (amount, rate) {
     const resultEl = document.querySelector('#result-outcome')
     resultEl.innerHTML = result
 
-    const timestampJSON = localStorage.getItem('timestampMessage')
-    const lastTimestamp = JSON.parse(timestampJSON)
+    const lastTimestamp = localStorage.getItem('timestampMessage')
+    // const lastTimestamp = JSON.parse(timestampJSON)
     const timestampEl = document.querySelector('#rate-timestamp')
     timestampEl.innerHTML = lastTimestamp
 }
